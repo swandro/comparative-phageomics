@@ -38,7 +38,9 @@ for genome in genome_file_list:
 
 #Get a list of all genes
 all_genes = []
+all_genes_dict = dict()
 for genome in gbk_files:
+    all_genes_dict[genome.name] = []
     for gene in genome.features:
         if gene.type in ["CDS", "tRNA"]:   ##only grabbing CDS and tRNA for now
             gene.seq = gene.extract(genome.seq)  ##Add the sequence to each gene
@@ -53,6 +55,7 @@ for genome in gbk_files:
             else:
                 raise Exception("Could not find the dictionary key for a unique gene identifier for genome: {G}, gene: {gen}".format(G= genome, gen=gene))
             all_genes.append(gene)  ##Add gene to list
+            all_genes_dict[genome.name].append(gene)
 
 #####Write genes to fasta file
 db_fasta = ''
@@ -69,10 +72,11 @@ subprocess.call("makeblastdb.exe -in db.fasta -dbtype nucl -out blastDB", shell=
 
 
 #Blast all genes
-test = NcbiblastnCommandline(cmd="blastn.exe", out="test_blast.txt", outfmt=6 , query= "db.fasta", db="blastDB")
+test = NcbiblastnCommandline(cmd="blastn.exe", task = 'dc-megablast', out="test_blast.txt", outfmt='"6 qseqid sseqid pident qlen length mismatch gapope evalue bitscore qcovhsp"' , query= "db.fasta", db="blastDB")
 test()
 
-def parse_blast(file:"filename of blast result"):
+
+def parse_blast(file:"filename of blast result", MIN_NUC_ID, MIN_Q_COV):
     '''Takes in a BLAST result in format 6 and generates a dictionary: dict("Phage": dict(gene:[hit organism, hit gene, hit stats])'''
 
     result = dict()   ##Set up the result dictionary
@@ -83,23 +87,74 @@ def parse_blast(file:"filename of blast result"):
             query_genome = linesplit[0].split("__")[0]
             query_gene = linesplit[0].split("__")[1]
             hit_genome = linesplit[1].split("__")[0]
-            if hit_genome == query_genome:
-                continue
+
             hit_gene = linesplit[1].split("__")[1]
             hit_percent = float(linesplit[2])
-            evalue = linesplit[-1]
+            evalue = float(linesplit[-2])
+            query_cov = float(linesplit[-1])
             #############################
 
-            ###Add results to the dictionary#####
+            ###Add genome and gene to the dictionary if not already there#####
             if query_genome not in result.keys():
                 result[query_genome] = dict()
             if query_gene not in result[query_genome].keys():
-                result[query_genome][query_gene] = []
-            result[query_genome][query_gene].append([hit_genome, hit_gene, hit_percent, evalue])
+                result[query_genome][query_gene] = dict()
+            if hit_genome not in result[query_genome][query_gene].keys():
+                result[query_genome][query_gene][hit_genome]= []
+            #Skip hit if hitting same genome##
+            if hit_genome == query_genome:
+                continue
+            #Skip hit if does not meet provided cutoffs for nucleotide identity or query coverage
+            if hit_percent < MIN_NUC_ID or query_cov < MIN_Q_COV:
+                continue
+            #Add passing hits to result
+            result[query_genome][query_gene][hit_genome].append([hit_gene, hit_percent, query_cov, evalue])
         return(result)
 
 filename = "test_blast.txt"
-blast_parsed = parse_blast(filename)
+blast_parsed = parse_blast(filename, 40,40)
+
+#Write output, one for each genome. Rows=genes, columns = other phages
+for genome in all_genes_dict.keys():
+    with open( (genome + "_hit_matrix.txt"), 'w') as outfile:
+        #Get list of other genomes
+        other_genome_names = [x for x in all_genes_dict.keys()]
+        other_genome_names.remove(genome)
+
+        #Write header
+        firstline = ["gene"]
+        firstline.extend(other_genome_names)
+        outfile.write('\t'.join(firstline) + '\n')
+
+        #loop through genes
+        for gene in all_genes_dict[genome]:
+            row_result = []
+            gene_name = gene.id.split("__")[1]
+            row_result.append(str(gene_name))
+
+            for other_genome in other_genome_names:
+                if gene_name not in blast_parsed[genome].keys() or other_genome not in blast_parsed[genome][gene_name].keys():
+                    row_result.append('')
+                else:
+                    hit_result = 0
+                    for hit_gene in blast_parsed[genome][gene_name][other_genome]:
+                        if hit_gene[1] > hit_result:
+                            hit_result = hit_gene[1]
+                    '''
+                    hit_result = ''
+                    for hit_gene in blast_parsed[genome][gene_name][other_genome]:
+                        hit_gene = [str(x) for x in hit_gene]
+                        hit_result += '_'.join(hit_gene) + "|||"
+                    '''
+                    row_result.append(str(hit_result))
+            #Write row
+            outfile.write('\t'.join(row_result) + '\n')
+
+
+blast_parsed['V12_RAST']["fig|6666666.222563.peg.191"]
+
+
+###Playing###
 stats = dict()
 for key in blast_parsed.keys():
     stats[key] = []
@@ -115,5 +170,6 @@ for key in blast_parsed.keys():
     for gene in blast_parsed[key].keys():
         for hit in blast_parsed[key][gene]:
             sims.append(hit[3])
-
-sims = [float(x) for x in sims]
+sum(sims)/len(sims)
+min(sims)
+##########################
