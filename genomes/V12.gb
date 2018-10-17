@@ -1,4 +1,4 @@
-LOCUS       V12_RAST              152770 bp    DNA     circular UNA 06-MAR-2018
+LOCUS       V12_RAST              152770 bp    DNA     circular UNA 15-OCT-2018
 DEFINITION  .
 ACCESSION   urn.local...b-909zbum
 VERSION     urn.local...b-909zbum
@@ -7,101 +7,21 @@ SOURCE
   ORGANISM  
             .
 FEATURES             Location/Qualifiers
-     repeat_region   21..68
-                     /Identical_Bases=47
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.92%"
-                     /annotation_group="Repeat 3"
-                     /All_Locations="21+; 206+"
-                     /label="Repeat 3"
-     repeat_region   36..68
-                     /Identical_Bases=32
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="96.97%"
-                     /annotation_group="Repeat 11"
-                     /All_Locations="36+; 221+"
-                     /label="Repeat 11"
-     repeat_region   206..253
-                     /Identical_Bases=47
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.92%"
-                     /annotation_group="Repeat 3"
-                     /All_Locations="21+; 206+"
-                     /label="Repeat 3"
-     repeat_region   221..253
-                     /Identical_Bases=32
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="96.97%"
-                     /annotation_group="Repeat 12"
-                     /All_Locations="36+; 221+; 2,928+"
-                     /label="Repeat 12"
-     repeat_region   479..553
-                     /Identical_Bases=73
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="97.33%"
-                     /annotation_group="Repeat 1"
-                     /All_Locations="479+; 152,396+"
-                     /label="Repeat 1"
-     repeat_region   511..548
-                     /Identical_Bases=37
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.37%"
-                     /annotation_group="Repeat 8"
-                     /All_Locations="511+; 3,814+; 152,428+"
-                     /label="Repeat 8"
      CDS             546..953
                      /Source="FIG"
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.1"
                      /label="hypothetical protein"
-     repeat_region   945..985
-                     /Identical_Bases=41
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 6"
-                     /All_Locations="945+; 152,730+"
-                     /label="Repeat 6"
      CDS             997..1254
                      /Source="FIG"
                      /codon_start=2
                      /ID="fig|6666666.222563.peg.2"
                      /label="hypothetical protein"
-     repeat_region   1267..1316
-                     /Identical_Bases=48
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="96.00%"
-                     /annotation_group="Repeat 2"
-                     /All_Locations="1,267+; 5,973+"
-                     /label="Repeat 2"
-     repeat_region   1268..1301
-                     /Identical_Bases=33
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.06%"
-                     /annotation_group="Repeat 10"
-                     /All_Locations="1,268+; 3,782+; 5,974+"
-                     /label="Repeat 10"
      CDS             1332..1568
                      /Source="FIG"
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.3"
                      /label="hypothetical protein"
-     repeat_region   1599..1638
-                     /Identical_Bases=38
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="95.00%"
-                     /annotation_group="Repeat 7"
-                     /All_Locations="1,599+; 2,926+"
-                     /label="Repeat 7"
      CDS             1654..1908
                      /Source="FIG"
                      /codon_start=2
@@ -122,72 +42,16 @@ FEATURES             Location/Qualifiers
                      /codon_start=3
                      /ID="fig|6666666.222563.peg.7"
                      /label="hypothetical protein"
-     repeat_region   2926..2965
-                     /Identical_Bases=38
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="95.00%"
-                     /annotation_group="Repeat 7"
-                     /All_Locations="1,599+; 2,926+"
-                     /label="Repeat 7"
-     repeat_region   2928..2960
-                     /Identical_Bases=32
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="96.97%"
-                     /annotation_group="Repeat 13"
-                     /All_Locations="221+; 2,928+"
-                     /label="Repeat 13"
      CDS             2984..3367
                      /Source="FIG"
                      /codon_start=3
                      /ID="fig|6666666.222563.peg.8"
                      /label="hypothetical protein"
-     repeat_region   3406..3435
-                     /Identical_Bases=30
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 15"
-                     /All_Locations="3,406+; 152,770+"
-                     /label="Repeat 15"
      CDS             3486..3764
                      /Source="FIG"
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.9"
                      /label="hypothetical protein"
-     repeat_region   3763..3799
-                     /Identical_Bases=36
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.30%"
-                     /annotation_group="Repeat 9"
-                     /All_Locations="3,763+; 152,377+"
-                     /label="Repeat 9"
-     repeat_region   3763..3851
-                     /Identical_Bases=82
-                     /Mismatched_Bases=7
-                     /Frequency=2
-                     /Percent_Identical="92.13%"
-                     /annotation_group="Repeat 1"
-                     /All_Locations="3,763+; 152,377+"
-                     /label="Repeat 1"
-     repeat_region   3782..3815
-                     /Identical_Bases=33
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.06%"
-                     /annotation_group="Repeat 10"
-                     /All_Locations="1,268+; 3,782+; 5,974+"
-                     /label="Repeat 10"
-     repeat_region   3814..3851
-                     /Identical_Bases=37
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.37%"
-                     /annotation_group="Repeat 8"
-                     /All_Locations="511+; 3,814+; 152,428+"
-                     /label="Repeat 8"
      CDS             3849..4262
                      /Source="FIG"
                      /codon_start=1
@@ -218,22 +82,6 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.15"
                      /label="Phage protein"
-     repeat_region   5973..6022
-                     /Identical_Bases=48
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="96.00%"
-                     /annotation_group="Repeat 2"
-                     /All_Locations="1,267+; 5,973+"
-                     /label="Repeat 2"
-     repeat_region   5974..6007
-                     /Identical_Bases=33
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.06%"
-                     /annotation_group="Repeat 10"
-                     /All_Locations="1,268+; 3,782+; 5,974+"
-                     /label="Repeat 10"
      CDS             6038..6184
                      /Source="FIG"
                      /codon_start=3
@@ -761,14 +609,6 @@ FEATURES             Location/Qualifiers
                      /Source="FIG"
                      /ID="fig|6666666.222563.rna.24"
                      /label="tRNA-Asn-GTT"
-     repeat_region   56486..56527
-                     /Identical_Bases=40
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="95.24%"
-                     /annotation_group="Repeat 5"
-                     /All_Locations="56,486+; 108,699+"
-                     /label="Repeat 5"
      CDS             complement(56670..57008)
                      /Source="FIG"
                      /codon_start=1
@@ -928,19 +768,6 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.124"
                      /label="Secretory antigen SsaA-like protein"
-     primer_bind     86262..86281
-                     /Mismatches=0
-                     /created_by="primer3"
-                     /annotation_group="1740544843001937484dccfb-07e6-4dcb-a22e
-                     -5c57e7e0df8e"
-                     /%GC="55.0"
-                     /Tm="60.0"
-                     /Hairpin_Tm="None"
-                     /Self_Dimer_Tm="None"
-                     /Pair_Dimer_Tm="13.4"
-                     /Sequence="GTAAACTGGGGGCGTTCTCA"
-                     /Product_Size=7358
-                     /label="112 F"
      CDS             86816..93433
                      /Source="FIG"
                      /codon_start=1
@@ -949,22 +776,6 @@ FEATURES             Location/Qualifiers
                      /modified_by="User"
                      /label="Glycerophosphoryl diester phosphodiesterase (EC
                      3.1.4.46), phage variant"
-     repeat_region   88184..88227
-                     /Identical_Bases=43
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.73%"
-                     /annotation_group="Repeat 4"
-                     /All_Locations="88,184+; 88,589+"
-                     /label="Repeat 4"
-     repeat_region   88589..88632
-                     /Identical_Bases=43
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.73%"
-                     /annotation_group="Repeat 4"
-                     /All_Locations="88,184+; 88,589+"
-                     /label="Repeat 4"
      misc_feature    89453..91314
                      /created_by="User"
                      /label="duplication"
@@ -973,20 +784,6 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.126"
                      /label="Phage capsid and scaffold"
-     misc_feature    complement(93600..93619)
-                     /Mismatches=0
-                     /created_by="primer3"
-                     /annotation_group="1740544843001937484dccfb-07e6-4dcb-a22e
-                     -5c57e7e0df8e"
-                     /%GC="55.0"
-                     /Tm="60.1"
-                     /Hairpin_Tm="None"
-                     /Self_Dimer_Tm="None"
-                     /Pair_Dimer_Tm="13.4"
-                     /Sequence="ACATCAGAGTAGTTGCCCGC"
-                     /Product_Size=7358
-                     /label="113 R"
-                     /note="Geneious type: primer_bind_reverse"
      CDS             95943..96233
                      /Source="FIG"
                      /codon_start=1
@@ -1042,14 +839,6 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.137"
                      /label="Phage protein"
-     repeat_region   108699..108740
-                     /Identical_Bases=40
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="95.24%"
-                     /annotation_group="Repeat 5"
-                     /All_Locations="56,486+; 108,699+"
-                     /label="Repeat 5"
      CDS             108892..110667
                      /Source="FIG"
                      /codon_start=2
@@ -1317,80 +1106,16 @@ FEATURES             Location/Qualifiers
                      /codon_start=3
                      /ID="fig|6666666.222563.peg.189"
                      /label="hypothetical protein"
-     repeat_region   151527..151557
-                     /Identical_Bases=31
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 14"
-                     /All_Locations="151,527+; 151,532+"
-                     /label="Repeat 14"
-     repeat_region   151532..151562
-                     /Identical_Bases=31
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 14"
-                     /All_Locations="151,527+; 151,532+"
-                     /label="Repeat 14"
      CDS             151581..152036
                      /Source="FIG"
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.190"
                      /label="hypothetical protein"
-     repeat_region   152377..152413
-                     /Identical_Bases=36
-                     /Mismatched_Bases=1
-                     /Frequency=2
-                     /Percent_Identical="97.30%"
-                     /annotation_group="Repeat 9"
-                     /All_Locations="3,763+; 152,377+"
-                     /label="Repeat 9"
-     repeat_region   152377..152465
-                     /Identical_Bases=82
-                     /Mismatched_Bases=7
-                     /Frequency=2
-                     /Percent_Identical="92.13%"
-                     /annotation_group="Repeat 1"
-                     /All_Locations="3,763+; 152,377+"
-                     /label="Repeat 1"
-     repeat_region   152396..152470
-                     /Identical_Bases=73
-                     /Mismatched_Bases=2
-                     /Frequency=2
-                     /Percent_Identical="97.33%"
-                     /annotation_group="Repeat 1"
-                     /All_Locations="479+; 152,396+"
-                     /label="Repeat 1"
-     repeat_region   152428..152465
-                     /Identical_Bases=37
-                     /Mismatched_Bases=1
-                     /Frequency=3
-                     /Percent_Identical="97.37%"
-                     /annotation_group="Repeat 8"
-                     /All_Locations="511+; 3,814+; 152,428+"
-                     /label="Repeat 8"
      CDS             152463..152738
                      /Source="FIG"
                      /codon_start=1
                      /ID="fig|6666666.222563.peg.191"
                      /label="hypothetical protein"
-     repeat_region   152730..152770
-                     /Identical_Bases=41
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 6"
-                     /All_Locations="945+; 152,730+"
-                     /label="Repeat 6"
-     repeat_region   152770..29
-                     /Identical_Bases=30
-                     /Mismatched_Bases=0
-                     /Frequency=2
-                     /Percent_Identical="100%"
-                     /annotation_group="Repeat 15"
-                     /All_Locations="3,406+; 152,770+"
-                     /label="Repeat 15"
 ORIGIN      
         1 ttaaaaattt ttatgtttat ctattgacaa aaagaaataa acattatata ataaatatgt
        61 aagataaagg aggggaaaac atgaaaagca aagtaaaagc ctttttcatc gcaaggaggg

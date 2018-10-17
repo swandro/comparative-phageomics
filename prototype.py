@@ -46,12 +46,16 @@ for genome in gbk_files:
             gene.seq = gene.extract(genome.seq)  ##Add the sequence to each gene
             qualifier_list = gene.qualifiers.keys()
             gene.id = str(genome.name) + '__'
+            gene.origin = str(genome.name)
             if "db_xref" in qualifier_list:
                 gene.id += str(gene.qualifiers["db_xref"][0])
+                gene.id_only = str(gene.qualifiers["db_xref"][0])
             elif "locus_tag" in qualifier_list:
                 gene.id += str(gene.qualifiers["locus_tag"][0])
+                gene.id_only = str(gene.qualifiers["locus_tag"][0])
             elif "ID" in qualifier_list:
                 gene.id += str(gene.qualifiers["ID"][0])
+                gene.id_only = str(gene.qualifiers["ID"][0])
             else:
                 raise Exception("Could not find the dictionary key for a unique gene identifier for genome: {G}, gene: {gen}".format(G= genome, gen=gene))
             all_genes.append(gene)  ##Add gene to list
@@ -94,6 +98,9 @@ def parse_blast(file:"filename of blast result", MIN_NUC_ID, MIN_Q_COV):
             query_cov = float(linesplit[-1])
             #############################
 
+            #Skip hit if does not meet provided cutoffs for nucleotide identity or query coverage
+            if hit_percent < MIN_NUC_ID or query_cov < MIN_Q_COV:
+                continue
             ###Add genome and gene to the dictionary if not already there#####
             if query_genome not in result.keys():
                 result[query_genome] = dict()
@@ -103,9 +110,6 @@ def parse_blast(file:"filename of blast result", MIN_NUC_ID, MIN_Q_COV):
                 result[query_genome][query_gene][hit_genome]= []
             #Skip hit if hitting same genome##
             if hit_genome == query_genome:
-                continue
-            #Skip hit if does not meet provided cutoffs for nucleotide identity or query coverage
-            if hit_percent < MIN_NUC_ID or query_cov < MIN_Q_COV:
                 continue
             #Add passing hits to result
             result[query_genome][query_gene][hit_genome].append([hit_gene, hit_percent, query_cov, evalue])
@@ -136,7 +140,7 @@ for genome in all_genes_dict.keys():
                 if gene_name not in blast_parsed[genome].keys() or other_genome not in blast_parsed[genome][gene_name].keys():
                     row_result.append('')
                 else:
-                    hit_result = 0
+                    hit_result = 0.0
                     for hit_gene in blast_parsed[genome][gene_name][other_genome]:
                         if hit_gene[1] > hit_result:
                             hit_result = hit_gene[1]
@@ -151,25 +155,60 @@ for genome in all_genes_dict.keys():
             outfile.write('\t'.join(row_result) + '\n')
 
 
-blast_parsed['V12_RAST']["fig|6666666.222563.peg.191"]
+###Calculate the most conserved genes####
+master_gene_list = dict()
+i=1
+for gene in all_genes:
+    gene_found = False
+    ##See if gene already exists in master_gene_list
+    for master_gene in master_gene_list.keys():
+        if gene.origin in master_gene_list[master_gene].keys():
+            if gene.id_only in master_gene_list[master_gene][gene.origin]:
+                gene_found = True
+                break
+    if gene_found:
+        continue
+    same_genes = dict({gene.origin:[gene.id_only]})
+    if gene.id_only in blast_parsed[gene.origin].keys():
+        for phage in blast_parsed[gene.origin][gene.id_only].keys():
+            if len(blast_parsed[gene.origin][gene.id_only][phage]) != 0:
+                if phage not in same_genes.keys():
+                    same_genes[phage] = []
+                for hit in blast_parsed[gene.origin][gene.id_only][phage]:
+                    same_genes[phage].append(hit[0])
+    master_gene_list[i] = same_genes
+    i += 1
+
+def find_gene(name, organism):
+    '''Finds a gene from a phage in the master gene list. Returns an index from the master gene list'''
+    result = []
+    for master_gene_i in master_gene_list.keys():
+        if organism in master_gene_list[master_gene_i].keys():
+            if name in master_gene_list[master_gene_i][organism]:
+                result.append(master_gene_i)
+    return result
+
+lens = []
+find_gene("SEED:fig|6666666.336390.peg.202", "Car")
+master_gene_list[369]
+for G in master_gene_list.keys():
+    lens.append(len(master_gene_list[G]))
 
 
-###Playing###
-stats = dict()
-for key in blast_parsed.keys():
-    stats[key] = []
-    for gene in blast_parsed[key].keys():
-        stats[key].append(len(blast_parsed[key][gene]))
+zeros = 0
+ones = 0
+more = 0
+for GENE in all_genes:
+    num = 0
+    for master_gene in master_gene_list.keys():
+        for gene_L in master_gene_list[master_gene].values():
+            if GENE.id_only in gene_L:
+                num += 1
+    if num == 1:
+        ones += 1
+    elif num == 0:
+        zeros += 1
+    else:
+        more += 1
+        print(GENE)
 
-for key in stats.keys():
-    print(key)
-    print("mean: {}".format(sum(stats[key])/len(stats[key])))
-
-sims = []
-for key in blast_parsed.keys():
-    for gene in blast_parsed[key].keys():
-        for hit in blast_parsed[key][gene]:
-            sims.append(hit[3])
-sum(sims)/len(sims)
-min(sims)
-##########################
