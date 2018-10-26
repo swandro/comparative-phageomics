@@ -1,0 +1,216 @@
+gene	num	length	product	ord
+fig|6666666.222563.peg.1	4	408	hypothetical protein	1
+fig|6666666.222563.peg.2	3	258	hypothetical protein	2
+fig|6666666.222563.peg.3	7	237	hypothetical protein	3
+fig|6666666.222563.peg.4	4	255	hypothetical protein	4
+fig|6666666.222563.peg.5	6	378	hypothetical protein	5
+fig|6666666.222563.peg.6	6	174	hypothetical protein	6
+fig|6666666.222563.peg.7	1	240	hypothetical protein	7
+fig|6666666.222563.peg.8	6	384	hypothetical protein	8
+fig|6666666.222563.peg.9	5	279	hypothetical protein	9
+fig|6666666.222563.peg.10	6	414	Phage protein	10
+fig|6666666.222563.peg.11	5	192	Phage protein	11
+fig|6666666.222563.peg.12	4	198	hypothetical protein	12
+fig|6666666.222563.peg.13	8	180	Phage protein	13
+fig|6666666.222563.peg.14	2	204	hypothetical protein	14
+fig|6666666.222563.peg.15	3	255	Phage protein	15
+fig|6666666.222563.peg.16	6	147	hypothetical protein	16
+fig|6666666.222563.peg.17	9	225	Phage protein	17
+fig|6666666.222563.peg.18	5	189	hypothetical protein	18
+fig|6666666.222563.peg.19	8	267	Phage protein	19
+fig|6666666.222563.peg.20	9	141	hypothetical protein	20
+fig|6666666.222563.peg.21	3	267	hypothetical protein	21
+fig|6666666.222563.peg.22	5	252	hypothetical protein	22
+fig|6666666.222563.peg.23	11	318	Phage protein	23
+fig|6666666.222563.peg.24	7	228	hypothetical protein	24
+fig|6666666.222563.peg.25	6	234	hypothetical protein	25
+fig|6666666.222563.peg.26	4	519	Uncharacterized domain COG3236 / GTP cyclohydrolase II (EC 3.5.4.25)	26
+fig|6666666.222563.peg.27	5	198	hypothetical protein	27
+fig|6666666.222563.peg.28	4	165	hypothetical protein	28
+fig|6666666.222563.peg.29	6	387	hypothetical protein	29
+fig|6666666.222563.peg.30	6	438	Phage protein	30
+fig|6666666.222563.peg.31	6	1245	Protein RtcB	31
+fig|6666666.222563.peg.32	6	189	hypothetical protein	32
+fig|6666666.222563.peg.33	6	741	Phage protein	33
+fig|6666666.222563.peg.34	2	648	hypothetical protein	34
+fig|6666666.222563.peg.35	9	759	Circadian phase modifier	35
+fig|6666666.222563.peg.36	7	243	hypothetical protein	36
+fig|6666666.222563.peg.37	4	369	hypothetical protein	37
+fig|6666666.222563.peg.38	7	852	Phage protein	38
+fig|6666666.222563.peg.39	7	162	hypothetical protein	39
+fig|6666666.222563.peg.40	7	279	hypothetical protein	40
+fig|6666666.222563.peg.41	5	342	hypothetical protein	41
+fig|6666666.222563.peg.42	5	231	hypothetical protein	42
+fig|6666666.222563.peg.43	7	297	hypothetical protein	43
+fig|6666666.222563.peg.44	7	447	hypothetical protein	44
+fig|6666666.222563.peg.45	7	399	hypothetical protein	45
+fig|6666666.222563.peg.46	7	264	hypothetical protein	46
+fig|6666666.222563.peg.47	7	1635	hypothetical protein	47
+fig|6666666.222563.peg.48	7	321	hypothetical protein	48
+fig|6666666.222563.peg.49	8	741	Serine/threonine protein phosphatase (EC 3.1.3.16)	49
+fig|6666666.222563.peg.50	7	189	Phage protein	50
+fig|6666666.222563.peg.51	11	609	Phosphoesterase	51
+fig|6666666.222563.peg.52	7	576	Phosphohydrolase (MutT/nudix family protein)	52
+fig|6666666.222563.peg.53	7	477	hypothetical protein	53
+fig|6666666.222563.peg.54	9	351	Phage protein	54
+fig|6666666.222563.peg.55	7	225	hypothetical protein	55
+fig|6666666.222563.peg.56	6	261	Phage protein	56
+fig|6666666.222563.peg.57	2	159	hypothetical protein	57
+fig|6666666.222563.peg.58	5	204	hypothetical protein	58
+fig|6666666.222563.peg.59	7	564	hypothetical protein	59
+fig|6666666.222563.peg.60	5	558	hypothetical protein	60
+fig|6666666.222563.peg.61	6	759	hypothetical protein	61
+fig|6666666.222563.peg.62	5	333	hypothetical protein	62
+fig|6666666.222563.peg.63	10	387	Phage protein	63
+fig|6666666.222563.peg.64	11	204	Phage protein	64
+fig|6666666.222563.peg.65	11	858	Phage protein	65
+fig|6666666.222563.peg.66	7	615	"Ribonucleotide reductase of class III (anaerobic), activating protein (EC 1.97.1.4)"	66
+fig|6666666.222563.peg.67	7	294	hypothetical protein	67
+fig|6666666.222563.peg.68	15	963	Thymidylate synthase (EC 2.1.1.45)	68
+fig|6666666.222563.peg.69	7	630	hypothetical protein	69
+fig|6666666.222563.peg.70	7	750	hypothetical protein	70
+fig|6666666.222563.peg.71	7	468	hypothetical protein	71
+fig|6666666.222563.peg.72	5	264	hypothetical protein	72
+fig|6666666.222563.peg.73	5	330	hypothetical protein	73
+fig|6666666.222563.peg.74	6	576	hypothetical protein	74
+fig|6666666.222563.peg.75	6	1128	"Nicotinamide-nucleotide adenylyltransferase, NadR family (EC 2.7.7.1) / Ribosylnicotinamide kinase (EC 2.7.1.22)"	75
+fig|6666666.222563.peg.76	5	615	hypothetical protein	76
+fig|6666666.222563.peg.77	5	549	LemA family protein	77
+fig|6666666.222563.peg.78	6	378	hypothetical protein	78
+fig|6666666.222563.peg.79	7	240	"Glutaredoxin-like protein NrdH, required for reduction of Ribonucleotide reductase class Ib"	79
+fig|6666666.222563.peg.80	7	765	Nicotinamide mononucleotide transporter	80
+fig|6666666.222563.peg.81	7	816	Deoxyadenosine kinase (EC 2.7.1.76) / Deoxyguanosine kinase (EC 2.7.1.113)	81
+fig|6666666.222563.peg.82	7	2172	"Ribonucleotide reductase of class III (anaerobic), large subunit (EC 1.17.4.2)"	82
+fig|6666666.222563.peg.83	7	270	Phage protein	83
+fig|6666666.222563.peg.84	7	831	conserved domain protein	84
+fig|6666666.222563.peg.85	7	306	"scaffolding protein, putative; previously named ORF B1"	85
+fig|6666666.222563.peg.86	7	216	Phage protein	86
+fig|6666666.222563.peg.87	6	1533	Phage protein	87
+fig|6666666.222563.peg.88	14	225	Phage protein	88
+fig|6666666.222563.rna.1	1	213	tRNA-Gly-TCC	89
+fig|6666666.222563.rna.2	1	219	tRNA-Pro-TGG	90
+fig|6666666.222563.rna.3	1	201	tRNA-Pseudo-ATG	91
+fig|6666666.222563.rna.4	1	219	tRNA-Ala-TGC	92
+fig|6666666.222563.rna.5	1	219	tRNA-Arg-TCT	93
+fig|6666666.222563.peg.89	7	369	hypothetical protein	94
+fig|6666666.222563.peg.90	1	255	hypothetical protein	95
+fig|6666666.222563.rna.6	1	261	tRNA-Ser-GGA	96
+fig|6666666.222563.peg.91	1	723	hypothetical protein	97
+fig|6666666.222563.rna.7	1	255	tRNA-Leu-TAG	98
+fig|6666666.222563.rna.8	1	213	tRNA-His-GTG	99
+fig|6666666.222563.peg.92	6	222	hypothetical protein	100
+fig|6666666.222563.rna.9	1	222	tRNA-Ile-GAT	101
+fig|6666666.222563.rna.10	1	216	tRNA-Val-TAC	102
+fig|6666666.222563.rna.11	1	219	tRNA-Arg-ACG	103
+fig|6666666.222563.rna.12	1	222	tRNA-Lys-TTT	104
+fig|6666666.222563.rna.13	1	222	tRNA-Lys-CTT	105
+fig|6666666.222563.rna.14	1	216	tRNA-Thr-TGT	106
+fig|6666666.222563.peg.93	10	780	Phage protein	107
+fig|6666666.222563.rna.15	1	222	tRNA-Phe-GAA	108
+fig|6666666.222563.rna.16	1	219	tRNA-Cys-GCA	109
+fig|6666666.222563.rna.17	1	216	tRNA-Trp-CCA	110
+fig|6666666.222563.rna.18	1	222	tRNA-Met-CAT	111
+fig|6666666.222563.rna.19	1	216	tRNA-Glu-TTC	112
+fig|6666666.222563.rna.20	1	225	tRNA-Asp-GTC	113
+fig|6666666.222563.rna.21	1	216	tRNA-Met-CAT	114
+fig|6666666.222563.rna.22	1	267	tRNA-Ser-GCT	115
+fig|6666666.222563.rna.23	1	216	tRNA-Gln-TTG	116
+fig|6666666.222563.rna.24	1	213	tRNA-Asn-GTT	117
+fig|6666666.222563.peg.94	7	339	Phage protein	118
+fig|6666666.222563.peg.95	15	348	Phage protein	119
+fig|6666666.222563.peg.96	7	129	hypothetical protein	120
+fig|6666666.222563.peg.97	12	168	hypothetical protein	121
+fig|6666666.222563.peg.98	7	429	Phage protein	122
+fig|6666666.222563.peg.99	13	1062	"Phage terminase, large subunit"	123
+fig|6666666.222563.peg.100	3	939	Phage protein	124
+fig|6666666.222563.peg.101	15	591	"Phage terminase, large subunit"	125
+fig|6666666.222563.peg.102	7	846	Phage protein	126
+fig|6666666.222563.peg.103	15	636	Phage protein	127
+fig|6666666.222563.peg.104	7	357	Phage protein	128
+fig|6666666.222563.peg.105	15	1257	"Phage lysin, N-acetylmuramoyl-L-alanine amidase (EC 3.5.1.28)"	129
+fig|6666666.222563.peg.106	6	609	Aggregation promoting factor	130
+fig|6666666.222563.peg.107	7	945	"Phage lysin, N-acetylmuramoyl-L-alanine amidase (EC 3.5.1.28)"	131
+fig|6666666.222563.peg.108	15	345	Phage protein	132
+fig|6666666.222563.peg.109	15	1689	Phage protein	133
+fig|6666666.222563.peg.110	15	789	Phage protein	134
+fig|6666666.222563.peg.111	7	1011	Phage protein	135
+fig|6666666.222563.peg.112	15	1422	Phage major capsid protein	136
+fig|6666666.222563.peg.113	7	252	Phage protein	137
+fig|6666666.222563.peg.114	15	897	Phage protein	138
+fig|6666666.222563.peg.115	15	873	Phage protein	139
+fig|6666666.222563.peg.116	15	624	Phage protein	140
+fig|6666666.222563.peg.117	15	846	Phage protein	141
+fig|6666666.222563.peg.118	14	240	Phage protein	142
+fig|6666666.222563.peg.119	15	1710	Phage major tail sheath	143
+fig|6666666.222563.peg.120	15	423	Phage protein	144
+fig|6666666.222563.peg.121	15	474	Phage protein	145
+fig|6666666.222563.peg.122	15	594	Phage protein	146
+fig|6666666.222563.peg.123	15	3657	Phage tail length tape-measure protein	147
+fig|6666666.222563.peg.124	15	2520	Secretory antigen SsaA-like protein	148
+fig|6666666.222563.peg.125	15	6618	"Glycerophosphoryl diester phosphodiesterase (EC 3.1.4.46), phage variant"	149
+fig|6666666.222563.peg.126	15	2412	Phage capsid and scaffold	150
+fig|6666666.222563.peg.127	1	291	hypothetical protein	151
+fig|6666666.222563.peg.128	7	147	Phage protein	152
+fig|6666666.222563.peg.129	15	702	Phage protein	153
+fig|6666666.222563.peg.130	15	537	Phage protein	154
+fig|6666666.222563.peg.131	15	705	Phage protein	155
+fig|6666666.222563.peg.132	15	1053	Phage baseplate	156
+fig|6666666.222563.peg.133	5	3474	Phage protein	157
+fig|6666666.222563.peg.134	15	546	Phage protein	158
+fig|6666666.222563.peg.135	15	3459	Phage virulence-associated protein	159
+fig|6666666.222563.peg.136	11	963	Phage protein	160
+fig|6666666.222563.peg.137	7	207	Phage protein	161
+fig|6666666.222563.peg.138	15	1776	"DNA helicase, phage-associated"	162
+fig|6666666.222563.peg.139	15	1644	Phage protein	163
+fig|6666666.222563.peg.140	15	1473	"DNA helicase, phage-associated"	164
+fig|6666666.222563.peg.141	15	1041	Phage recombination exonuclease	165
+fig|6666666.222563.peg.142	7	1893	Phage recombination related exonuclease (EC 3.1.11.-)	166
+fig|6666666.222563.peg.143	15	660	Phage protein	167
+fig|6666666.222563.peg.144	14	1056	"DNA primase (EC 2.7.7.-) / DNA helicase (EC 3.6.1.-), phage-associated"	168
+fig|6666666.222563.peg.145	15	882	"Deoxyuridine 5'-triphosphate nucleotidohydrolase (EC 3.6.1.23), phage associated"	169
+fig|6666666.222563.peg.146	7	237	hypothetical protein	170
+fig|6666666.222563.peg.147	6	312	hypothetical protein	171
+fig|6666666.222563.peg.148	7	312	Phage protein	172
+fig|6666666.222563.peg.149	15	369	Phage protein	173
+fig|6666666.222563.peg.150	5	648	hypothetical protein	174
+fig|6666666.222563.peg.151	15	678	Phage protein	175
+fig|6666666.222563.peg.152	7	366	Phage protein	176
+fig|6666666.222563.peg.153	6	138	hypothetical protein	177
+fig|6666666.222563.peg.154	7	423	Phage protein	178
+fig|6666666.222563.peg.155	15	795	Phage protein	179
+fig|6666666.222563.peg.156	15	312	Phage integration host factor	180
+fig|6666666.222563.peg.157	15	3027	"DNA polymerase I (EC 2.7.7.7), phage-associated"	181
+fig|6666666.222563.peg.158	15	531	Phage protein	182
+fig|6666666.222563.peg.159	14	1317	Phage protein	183
+fig|6666666.222563.peg.160	15	1248	Phage recombinase	184
+fig|6666666.222563.peg.161	15	375	Phage protein	185
+fig|6666666.222563.peg.162	15	618	Phage protein	186
+fig|6666666.222563.peg.163	15	279	Phage protein	187
+fig|6666666.222563.peg.164	7	1197	Phage major tail protein	188
+fig|6666666.222563.peg.165	14	447	Phage protein	189
+fig|6666666.222563.peg.166	6	237	hypothetical protein	190
+fig|6666666.222563.peg.167	7	270	hypothetical protein	191
+fig|6666666.222563.peg.168	11	939	Phage protein	192
+fig|6666666.222563.peg.169	15	1284	Phage protein	193
+fig|6666666.222563.peg.170	7	369	Phage protein	194
+fig|6666666.222563.peg.171	8	645	Phage protein	195
+fig|6666666.222563.peg.172	15	741	Phage protein	196
+fig|6666666.222563.peg.173	15	504	Phage protein	197
+fig|6666666.222563.peg.174	15	867	Phage protein	198
+fig|6666666.222563.peg.175	7	549	hypothetical protein	199
+fig|6666666.222563.peg.176	7	849	"Thioredoxin, phage-associated"	200
+fig|6666666.222563.peg.177	6	1728	Phage protein	201
+fig|6666666.222563.peg.178	15	696	Phage protein	202
+fig|6666666.222563.peg.179	15	465	Phage protein	203
+fig|6666666.222563.peg.180	7	297	hypothetical protein	204
+fig|6666666.222563.peg.181	7	2421	Phage protein	205
+fig|6666666.222563.peg.182	7	561	hypothetical protein	206
+fig|6666666.222563.peg.183	7	237	hypothetical protein	207
+fig|6666666.222563.peg.184	7	249	Phage repressor	208
+fig|6666666.222563.peg.185	7	441	hypothetical protein	209
+fig|6666666.222563.peg.186	5	762	Phage protein	210
+fig|6666666.222563.peg.187	6	327	hypothetical protein	211
+fig|6666666.222563.peg.188	4	225	hypothetical protein	212
+fig|6666666.222563.peg.189	4	174	hypothetical protein	213
+fig|6666666.222563.peg.190	7	456	hypothetical protein	214
+fig|6666666.222563.peg.191	5	276	hypothetical protein	215

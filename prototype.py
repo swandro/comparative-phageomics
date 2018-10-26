@@ -61,6 +61,7 @@ for genome in gbk_files:
             all_genes.append(gene)  ##Add gene to list
             all_genes_dict[genome.name].append(gene)
 
+
 #####Write genes to fasta file
 db_fasta = ''
 for gene in all_genes:
@@ -155,7 +156,7 @@ for genome in all_genes_dict.keys():
             outfile.write('\t'.join(row_result) + '\n')
 
 
-###Calculate the most conserved genes####
+###Create a master gene list in which each entry is a gene and which gene it corresponds to in each genome####
 master_gene_list = dict()
 i=1
 for gene in all_genes:
@@ -179,6 +180,7 @@ for gene in all_genes:
     master_gene_list[i] = same_genes
     i += 1
 
+#find a gene in the master gene list
 def find_gene(name, organism):
     '''Finds a gene from a phage in the master gene list. Returns an index from the master gene list'''
     result = []
@@ -188,27 +190,98 @@ def find_gene(name, organism):
                 result.append(master_gene_i)
     return result
 
-lens = []
 find_gene("SEED:fig|6666666.336390.peg.202", "Car")
-master_gene_list[369]
-for G in master_gene_list.keys():
-    lens.append(len(master_gene_list[G]))
+#which genes are in all genomes
+genes_in_all_genomes = [x for x in master_gene_list if len(master_gene_list[x].keys()) == 15]
 
 
-zeros = 0
-ones = 0
-more = 0
-for GENE in all_genes:
-    num = 0
-    for master_gene in master_gene_list.keys():
-        for gene_L in master_gene_list[master_gene].values():
-            if GENE.id_only in gene_L:
-                num += 1
-    if num == 1:
-        ones += 1
-    elif num == 0:
-        zeros += 1
-    else:
-        more += 1
-        print(GENE)
+###############################################################
+
+##Explore frequency of genes in genomes and the functions
+#Get list of all genome names
+all_genome_names = [x.name for x in gbk_files]
+#Make a list based on the master gene list that has the functional calls for each gene in the master gene list from all genomes that the gene is present
+gene_functions = []
+for i in master_gene_list.keys():
+    #First value is master gene index
+    #second value is number of genomes it appears in
+    result = [i, len(master_gene_list[i].keys())]
+    #Next 15 values are the gene product names in the corresponding 15 genomes
+    result.extend(['']*15)
+    for j,genome in enumerate(all_genome_names):
+        if genome in master_gene_list[i].keys():
+            gene_name = master_gene_list[i][genome][0]
+            for gene in all_genes_dict[genome]:
+                if gene.id_only == gene_name:
+                    if "product" in gene.qualifiers:
+                        result[j+2] = gene.qualifiers["product"][0]
+                        break
+                    elif 'label' in gene.qualifiers:
+                        result[j + 2] = gene.qualifiers["label"][0]
+                        break
+    gene_functions.append(result)
+
+#Write the file of gene functions
+with open("gene_functions.tsv", 'w') as openfile:
+    firstline = '\t'.join(["id","num_genomes"] + all_genome_names) + '\n'
+    openfile.write(firstline)
+    for line in gene_functions:
+        openfile.write('\t'.join([str(x) for x in line]) + '\n')
+
+
+##########################################Core genome alignment##########################################
+#which genes are in all genomes
+genes_in_all_genomes = [x for x in master_gene_list if len(master_gene_list[x].keys()) == 15]
+core_genomes = dict()
+
+for genome in gbk_files:
+    name = genome.name
+    result = []
+    for gene in genes_in_all_genomes:
+        #get gene SeqRecord
+        for feature in all_genes_dict[name]:
+            if feature.id_only == master_gene_list[gene][name][0]:
+                result.append(feature) ###Current problem, some genes in master gene list have multiple hits in a single genome
+                break
+    core_genomes[name] = result
+
+
+with open("core_genomes.fasta", 'w') as outfile:
+    for genome in core_genomes.keys():
+        result = ''
+        for gene in core_genomes[genome]:
+            result += str(gene.seq)
+        outfile.write(">" + str(genome) + '\n')
+        outfile.write(result + '\n')
+
+
+##Import core genome alignment fasta from muscle
+core_genome_alignment = AlignIO.read(open("core_genome_alignment.fasta","r"), "fasta")
+core_genome_alignment
+
+len(core_genomes["Ben"][0].seq)
+for thing in core_genomes.values():
+    print(len(thing[59].seq))
+
+#Visualization of conservation across the phage genome
+#make genbank_dict
+genbank_dict = dict()
+for item in gbk_files:
+    genbank_dict[item.name] = item
+
+#Get order of master genes in all genomes
+master_genes_in_genomes_dict = dict()
+for genome in all_genome_names:
+    result = []
+    gene_list = [x.id_only for x in all_genes_dict[genome]]
+    for gene in gene_list:
+        for master_gene in master_gene_list.keys():
+            if genome in master_gene_list[master_gene].keys() and gene in master_gene_list[master_gene][genome]:
+                result.append((master_gene,gene))
+                break
+    master_genes_in_genomes_dict[genome] = result
+
+#Write file with orders of genes in every genome
+with open("gene_orders.tsv","w") as outfile:
+    outfile.write("")
 
