@@ -1,6 +1,7 @@
 from Bio import SeqIO
 from Bio import AlignIO
 from Bio import Seq
+import Bio
 from Bio.Blast.Applications import NcbiblastnCommandline
 import glob
 import subprocess
@@ -8,14 +9,25 @@ import subprocess
 ######################Importing and formatting data####################################
 
 ##Get filenames of genomes in the genbank file format
-genome_file_list = glob.glob('prokka_genomes/*.gbf')   ##Get names of all genomes
+my_genome_file_list = glob.glob('prokka_genomes/*.gbf')   ##Get names of all genomes
+phagesdb_file = "phagesdb/phages_db.gb"
+genbank_file = "all_phages/phage_genbank.gb"
 
 #Create dictionary of imported Genbank files. Genome name is Key
 gbk_files_dict = dict()
-for genome in genome_file_list:
-    with open(genome,   'r') as genbank_file:
-        for record in SeqIO.parse(genbank_file, "genbank"):
+for genome in my_genome_file_list:
+    with open(genome,   'r') as gb_file:
+        for record in SeqIO.parse(gb_file, "genbank"):
+            record.origin_db = "my_list"
             gbk_files_dict[record.name] = record
+with open(phagesdb_file, 'r') as gb_file:
+    for record in SeqIO.parse(gb_file, "genbank"):
+        record.origin_db = "phagesdb"
+        gbk_files_dict[record.name] = record
+with open(genbank_file, 'r') as gb_file:
+    for record in SeqIO.parse(gb_file, "genbank"):
+        record.origin_db = "genbank"
+        gbk_files_dict[record.name] = record
 
 
 #Create list of all genes and dictionary of all genes by genome
@@ -23,6 +35,16 @@ for genome in genome_file_list:
 all_genes = []
 all_genes_dict = dict()
 
+for genome in gbk_files_dict.values():
+    if genome.origin_db == "genbank":
+        three = genome
+        break
+
+one.features[40].id
+two.features[40].qualifiers
+three.features[40].id
+
+no_work = []
 for genome_name in gbk_files_dict.keys():
     all_genes_dict[genome_name] = []
     genome = gbk_files_dict[genome_name]
@@ -32,13 +54,16 @@ for genome_name in gbk_files_dict.keys():
             qualifier_list = gene.qualifiers.keys()
             gene.name_id = str(genome.name) + '__'
             gene.origin = str(genome.name)
+            gene.origin_db = genome.origin_db
             if "locus_tag" in qualifier_list:
                 gene.name_id += str(gene.qualifiers["locus_tag"][0])
-                gene.id_only = str(gene.qualifiers["locus_tag"][0])
+                gene.id = str(gene.qualifiers["locus_tag"][0])
             else:
-                raise Exception("Could not find the dictionary key for a unique gene identifier for genome: {G}, gene: {gen}".format(G= genome, gen=gene))
+                no_work.append(genome_name)
+                break
+                #raise Exception("Could not find the dictionary key for a unique gene identifier for genome: {G}, gene: {gen}".format(G= genome, gen=gene))
             all_genes.append(gene)  ##Add gene to list
-            all_genes_dict[genome_name].append(gene)
+            #all_genes_dict[genome_name].append(gene)
 
 #################################################################
 
